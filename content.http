@@ -1,0 +1,38 @@
+### find all content
+GET http://localhost:8080/api/content
+
+### find content by id
+GET http://localhost:8080/api/content/1
+
+### create new content
+POST http://localhost:8080/api/content
+Content-Type: application/json
+
+ {
+    "id": 1,
+    "title": "New Content",
+    "desc": "This is the New content",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2025-10-14T15:39:35.1003599",
+    "dateUpdated": null,
+    "url": ""
+  }
+
+### update content
+PUT http://localhost:8080/api/content/1
+Content-Type: application/json
+
+ {
+    "id": 1,
+    "title": "First on, the top",
+    "desc": "This is first updated content",
+    "status": "IDEA",
+    "contentType": "ARTICLE",
+    "dateCreated": "2025-10-14T15:39:35.1003599",
+    "dateUpdated": "2025-10-14T15:39:35.1003599",
+    "url": "http://localhost:8080/my-first-time-blog"
+  }
+
+### delete content
+DELETE  http://localhost:8080/api/content/1
