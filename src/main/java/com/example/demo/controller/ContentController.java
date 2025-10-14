@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,8 @@ import com.example.demo.model.Content;
 import com.example.demo.repository.ContentCollectionRepository;
 
 @RestController 
-@RequestMapping("/api/content") 
+@RequestMapping("/api/content")
+@CrossOrigin
 public class ContentController {
 
     private final ContentCollectionRepository repository;
@@ -69,4 +71,5 @@ public class ContentController {
 // - @RestController : Gère les REST API et retourne des réponse JSON/XML sans vue
 // - @RequestMapping : Sert à Mapper une URL ou une requete Http : GET, UPDATE, POST, DELETE, PATCH
 // - @PathVariable : Sert a mapper l'argument de le corps de la requete HTTP dans l'URL
-// -@RequestBody : Sert a mapper le corps de la requete HTTP dans l'argument de la methode
+// - @RequestBody : Sert a mapper le corps de la requete HTTP dans l'argument de la methode
+// - @CrossOrigin : autorise les requetes provenant d'autres domaines (utile pour le dev front)
