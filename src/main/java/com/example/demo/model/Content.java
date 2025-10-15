@@ -6,12 +6,11 @@ import jakarta.validation.constraints.NotBlank;
 
 public record Content(
         Integer id,
-        @NotBlank(message = "Title is mandatory")
-        String title,
+        @NotBlank(message = "Title is mandatory") String title,
         String desc,
         Status status,
         Type contentType,
         LocalDateTime dateCreated,
         LocalDateTime dateUpdated,
-        String url) 
-{}
+        String url) {
+}
