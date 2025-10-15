@@ -66,3 +66,5 @@ public class ContentCollectionRepository {
 // @Repository : équivalent au DemoApplication
 // Optional<Type> : evite les NullPointerException -> soit un retour de type Type soit empty(null)
 // @PostConstruct : retourne un void et est execute avant les bean et ses dependances le soit
+// Spring data JPA(Java Persistence API) : réduire le boilerplate code pour les opérations CRUD (Create, Read, Update, Delete)
+//      - Spring Data JPA génère automatiquement les requêtes SQL à partir de méthodes définies dans tes repositories

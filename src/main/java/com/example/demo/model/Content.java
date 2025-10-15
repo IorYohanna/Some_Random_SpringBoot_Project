@@ -2,8 +2,11 @@ package com.example.demo.model;
 
 import java.time.LocalDateTime;
 
+import jakarta.validation.constraints.NotBlank;
+
 public record Content(
         Integer id,
+        @NotBlank(message = "Title is mandatory")
         String title,
         String desc,
         Status status,
