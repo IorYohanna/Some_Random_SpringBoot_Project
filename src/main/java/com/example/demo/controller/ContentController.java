@@ -20,8 +20,6 @@ import com.example.demo.model.Status;
 import com.example.demo.repository.ContentRepository;
 
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController 
 @RequestMapping("/api/content")

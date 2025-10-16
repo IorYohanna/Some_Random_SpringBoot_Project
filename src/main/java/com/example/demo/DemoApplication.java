@@ -18,21 +18,24 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
+	/*
+	 * run après le démarrage de l'application et le chargement des bean et
+	 * dependencies
+	 */
 	@Bean
 	CommandLineRunner commandLineRunner(ContentRepository repository) {
 		return args -> {
-			//insert some data into the database 
+			// insert some data into the database
 			Content content = new Content(
-            null,
-            "Hello World! , -FROM Copilot!!",
-            "Just to test if it works",
-            Status.IDEA,
-            Type.ARTICLE,
-            LocalDateTime.now(),
-            null,
-            ""
-        );
-		repository.save(content);
+					null,
+					"Hello World! , -FROM Copilot!!",
+					"Just to test if it works",
+					Status.IDEA,
+					Type.ARTICLE,
+					LocalDateTime.now(),
+					null,
+					"");
+			repository.save(content);
 		};
 	}
 }
