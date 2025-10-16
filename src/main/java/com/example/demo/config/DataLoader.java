@@ -1,12 +1,12 @@
 package com.example.demo.config;
 
 import org.springframework.boot.CommandLineRunner;
-/* import org.springframework.stereotype.Component; */
+/* import org.springframework.stereotype.Component;
 
-/* @Component */
+@Component */
 public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello, World! DataLoader is running...");
+        System.out.println("DataLoader is running...");
     }
 }
