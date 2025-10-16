@@ -16,29 +16,32 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.example.demo.model.Content;
-import com.example.demo.repository.ContentCollectionRepository;
+import com.example.demo.model.Status;
+import com.example.demo.repository.ContentRepository;
 
 import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController 
 @RequestMapping("/api/content")
 @CrossOrigin
 public class ContentController {
 
-    private final ContentCollectionRepository repository;
+    private final ContentRepository repository;
 
-    public ContentController(ContentCollectionRepository repository) {
+    public ContentController(ContentRepository repository) {
         this.repository = repository;
     }
 
     @GetMapping("")
-    public List<Content> FindAll () {
-        return repository.FindAll();
+    public List<Content> findAll () {
+        return repository.findAll();
     }
 
     @GetMapping("/{id}")
     public Content findById (@PathVariable Integer id) {
-        return repository.FindById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found"));
+        return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Content not found"));
     }
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -60,13 +63,22 @@ public class ContentController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     public void delete (@PathVariable Integer id) {
-        repository.delete(id);
+        repository.deleteById(id);
     }
 
+    @GetMapping("/filter/{keyword}")
+    public List<Content> findByTitle (@PathVariable String keyword) {
+        return repository.findAllByTitleContains(keyword);
+    }
+
+    @GetMapping("/status/{status}")
+    public List<Content> findByStatus(@PathVariable Status status) {
+        return repository.findAllByStatus(status);
+    }
+    
+
+
 }
-
-
-
 
 
 // Notes :

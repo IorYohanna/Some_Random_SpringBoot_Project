@@ -2,14 +2,14 @@
 GET http://localhost:8080/api/content
 
 ### find content by id
-GET http://localhost:8080/api/content/1
+GET http://localhost:8080/api/content
 
 ### create new content
 POST http://localhost:8080/api/content
 Content-Type: application/json
 
  {
-    "id": 2,
+    "id": 1,
     "title": " ",
     "desc": "This is the New content",
     "status": "IDEA",
