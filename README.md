@@ -51,5 +51,13 @@ and open it on port: http://localhost:8080 in your browser
 
 • Preparing your application for production deployment
 
-
-
+## Production 
+If you have a JVM or JDK on your computer you can create a .jar file                      
+By excecuting the following command (in the terminal) in your main repository :
+```bash
+./mvw clean package
+```
+Now you can run the .jar file by writing this command line :
+```bash
+java -jar your-project-name.jar
+```
